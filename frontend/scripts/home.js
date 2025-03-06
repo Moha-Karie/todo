@@ -16,7 +16,7 @@ const getDashboardSummary = async () => {
       return;
     }
 
-    const response = await fetch("http://localhost:8000/api/users/dashboard", {
+    const response = await fetch("https://todo-app-spcu.onrender.com/api/users/dashboard", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +79,7 @@ todoForm.addEventListener("submit", async (e) => {
   try {
     if (id) {
       const response = await fetch(
-        `http://localhost:8000/api/todos/editTodo/${id}`,
+        `https://todo-app-spcu.onrender.com/api/todos/editTodo/${id}`,
         {
           method: "PUT",
           headers: {
@@ -103,7 +103,7 @@ todoForm.addEventListener("submit", async (e) => {
       );
       // getTodos("completed")
     } else {
-      const response = await fetch("http://localhost:8000/api/todos/addTodos", {
+      const response = await fetch("https://todo-app-spcu.onrender.com/api/todos/addTodos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -158,17 +158,17 @@ const getTodos = async (status, page) => {
       return;
     }
 
-    let url = `http://localhost:8000/api/todos/viewTodos?page=${page}`;
+    let url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos?page=${page}`;
     if (status === "completed") {
-      url = `http://localhost:8000/api/todos/viewTodos/completed?page=${page}`;
+      url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/completed?page=${page}`;
     } else if (status === "pending") {
-      url = `http://localhost:8000/api/todos/viewTodos/pending?page=${page}`;
+      url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/pending?page=${page}`;
     } else if (status === "overDue") {
-      url = `http://localhost:8000/api/todos/viewTodos/overDued?page=${page}`;
+      url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/overDued?page=${page}`;
     } else if (status === "dueDate") {
-      url = `http://localhost:8000/api/todos/viewTodos/dueDate?page=${page}`;
+      url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/dueDate?page=${page}`;
     } else if (status === "prioritized") {
-      url = `http://localhost:8000/api/todos/viewTodos/prioritized?page=${page}`;
+      url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/prioritized?page=${page}`;
     }
 
     const response = await fetch(url, {
@@ -193,8 +193,8 @@ const getTodos = async (status, page) => {
           ? `<i class="fas fa-hourglass-half" style="color: white;"></i>`
           : `<i class="fas fa-check-square" style="color: white;"></i>`;
         const apiUrl = todo.completed
-          ? `http://localhost:8000/api/todos/pendTodo/${todo._id}`
-          : `http://localhost:8000/api/todos/completeTodo/${todo._id}`;
+          ? `https://todo-app-spcu.onrender.com/api/todos/pendTodo/${todo._id}`
+          : `https://todo-app-spcu.onrender.com/api/todos/completeTodo/${todo._id}`;
 
         html += `<tr>
           <td style="text-align: left; vertical-align: middle; width: 200px">${
@@ -293,7 +293,7 @@ const deleteTodo = async (id, activeTab) => {
   }
 
   const response = await fetch(
-    `http://localhost:8000/api/todos/deleteTodo/${id}`,
+    `https://todo-app-spcu.onrender.com/api/todos/deleteTodo/${id}`,
     {
       method: "DELETE",
       headers: {
@@ -448,17 +448,17 @@ const trackTabVisibility = async (status) => {
 
     // Fetch todos data for all statuses
     for (const stat of statuses) {
-      let url = `http://localhost:8000/api/todos/viewTodos`;
+      let url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos`;
       if (stat === "completed") {
-        url = `http://localhost:8000/api/todos/viewTodos/completed`;
+        url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/completed`;
       } else if (stat === "pending") {
-        url = `http://localhost:8000/api/todos/viewTodos/pending`;
+        url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/pending`;
       } else if (stat === "overDue") {
-        url = `http://localhost:8000/api/todos/viewTodos/overDued`;
+        url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/overDued`;
       } else if (stat === "dueDate") {
-        url = `http://localhost:8000/api/todos/viewTodos/dueDate`;
+        url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/dueDate`;
       } else if (stat === "prioritized") {
-        url = `http://localhost:8000/api/todos/viewTodos/prioritized`;
+        url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos/prioritized`;
       }
       const response = await fetch(url, {
         method: "GET",

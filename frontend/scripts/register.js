@@ -9,7 +9,7 @@ document
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     try {
-      const response = await fetch("http://localhost:8000/api/users/register", {
+      const response = await fetch("https://todo-app-spcu.onrender.com/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
