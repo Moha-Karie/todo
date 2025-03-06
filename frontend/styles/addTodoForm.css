@@ -1,0 +1,51 @@
+#todos{
+ 
+  margin-top: 60px;
+}
+.addTodo {
+  margin-top: 0px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+}
+
+.addTodo input[type="text"],
+.addTodo input[type="date"],
+#todoPriority {
+  width: 280px;
+  padding: 7px;
+  background-color: transparent;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.addTodo input[type="submit"] {
+  background-color: green;
+  color: white;
+  padding: 11px 25px;
+  border: none;
+  border-radius: 2px;
+  margin-left: 14px;
+}
+
+.todos-title {
+  margin: 0px;
+  margin-bottom: 40px;
+  font-size: 18px;
+  color: white;
+  background-color: black;
+  border: none;
+  text-align: center;
+  padding: 8px 30px;
+  color: white;
+  border-left: 5px solid red;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-right: 5px solid red;
+  display: inline-block;
+}

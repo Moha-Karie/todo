@@ -1,0 +1,43 @@
+.filter-tabs {
+    /* margin-bottom: 0px; */
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .all-tab,
+  .dueDate-tab,
+  .pending-tab,
+  .completed-tab,
+  .OverDue-tab,
+  .prioritized-tab {
+    color: white;
+    padding: 8px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 2px;
+    width: 120px;
+  }
+  
+  .all-tab {
+    background-color: blue;
+  }
+  .dueDate-tab {
+    background-color: purple;
+  }
+  .pending-tab {
+    background-color: orange;
+  }
+  .completed-tab {
+    background-color: green;
+  }
+  
+  .OverDue-tab {
+    background-color: red;
+  }
+  .prioritized-tab {
+    background-color: teal;
+  }

@@ -1,0 +1,101 @@
+html,
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Horizontal */
+  align-items: center; /* Vertical */
+  margin: 0; /* Remove default margin */
+}
+.login-container {
+  width: 300px;
+  border-style: solid;
+  align-items: center;
+  /* margin-top: 20px;
+  margin-left: 35%;
+  margin-right: 50%; */
+  border-color: green;
+  padding: 20px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-area {
+  background-color: green;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+  margin-top: 0px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  /* width: 100%; */
+  width: 70px;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+.username-label,
+.password-label {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 4px;
+  margin-top: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.email-entry-box,
+.password-entry-box,
+.fullname-entry-box {
+  width: 280px;
+  padding: 7px;
+  background-color: transparent;
+  border-color: gray;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.email-entry-box::placeholder,
+.password-entry-box::placeholder {
+  font-size: 15px;
+}
+
+.login-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  padding: 4px 40px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+/* .role {
+  display: flex;
+
+  margin-top: 10px;
+} */
+
+.create-page-redirect {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}

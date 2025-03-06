@@ -1,0 +1,44 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    /* background-color: red; */
+  }
+  
+  .edit-button {
+    background-color: blue;
+    color: white;
+    padding: 5px 12px;
+  }
+  .delete-button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+  }
+  .complete-button {
+    background-color: green;
+    /* color: white; */
+    padding: 5px 10px;
+    /* width: 80px; */
+  }

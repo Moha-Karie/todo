@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-List</title>
+   <link rel="stylesheet" href="../styles/register.css">
+  <body>
+    
+    <div class="header">
+      <!-- <h1 class="title">Payroll Management System</h1>
+      <div class="line"></div> -->
+    </div>
+    <div class="login-container">
+      <div class="login-area">Create Account</div>
+      <form id="registerForm" >
+        <label class="username-label" for="userEmail">Full Name: </label>
+        <input
+          required
+          class="fullname-entry-box"
+          type="text"
+          name="userFullName"
+          id="userFullName"
+          placeholder="Enter Your Full Name Here!"
+          autocomplete="name"
+        />
+        <label class="username-label" for="userEmail">Email: </label>
+        <input
+          required
+          class="email-entry-box"
+          type="email"
+          name="userEmail"
+          id="userEmail"
+          placeholder="Enter Your Email Here!"
+          autocomplete="email"
+        />
+        <label class="password-label" for="userPassword">Password: </label>
+        <input
+          required
+          class="password-entry-box"
+          type="password"
+          id="userPassword"
+          placeholder="Enter Your Password Here!"
+          autocomplete="new-password"
+        />
+        <label class="password-label" for="confirmPassword">Confirm Password: </label>
+        <input
+          required
+          class="password-entry-box"
+          type="password"
+          id="confirmPassword"
+          placeholder="Enter Your Password Here!"
+          autocomplete="new-password"
+        />
+
+        <!-- <div class="role">
+          <input type="radio" name="role" id="admin" value="Admin" />
+          <label for="admin">Admin</label>
+          <input type="radio" name="role" id="user" value="Employee" />
+          <label for="user">Employee</label>
+        </div> -->
+
+        <div class="login-div">
+          <input
+            class="login-button"
+            type="submit"
+            name=""
+            id=""
+            value="Create"
+          />
+        </div>
+
+        <div class="login"></div>
+
+        <div class="create-page-redirect">
+          Already Have An Account? 
+          <a href="/login"><span class="login-link">Sign In</span></a>
+
+        </div>
+      </form>
+    </div>
+    <!-- <footer class="footer">&copy; All rights are Reserved</footer> -->
+
+   <script src="../scripts/register.js"></script>
+  </body>
+</html>

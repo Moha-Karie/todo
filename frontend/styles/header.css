@@ -1,0 +1,37 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    right: 0;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #expand-collapse-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    /* background-color: red; */\
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+.themeToggleBtn{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  color: white;
+  font-size: 24px;
+  border: none;
+  padding: 7px 10px;
+  cursor: pointer;
+  z-index: 1000;
+}
+

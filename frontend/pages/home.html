@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../styles/pagination.css" />
+    <link rel="stylesheet" href="../styles/addTodoForm.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/filterTabs.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/todosTable.css" />
+    <link rel="stylesheet" href="../styles/addTodoForm.css" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <button
+      id="expand-collapse-btn"
+      class="fas fa-list"
+      style="font-size: 20px; background-color: transparent; color: white"
+    ></button>
+
+    <!-- <button class="fas fa-moon themeToggleBtn"></button>
+
+    <button id="themToggle">
+      <i id="themeToggleIcon" class="fas fa-moon"></i>
+    </button> -->
+
+    <nav class="sidebar" id="sidebar">
+      <div class="expand-collapse-icon"></div>
+
+      <h2>Navigation</h2>
+      <ul>
+        <li onclick="showSection('dashboard')">
+          <i class="fas fa-chart-line dashboard-icon"></i>Dashboard
+        </li>
+
+        <li onclick="showSection('todos')">
+          <i class="fas fa-list todos-icon"></i>Todos
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div id="dashboard" class="section active">
+        <header>Dashboard</header>
+        <div class="cards">
+          <!-- Your existing code remains the same -->
+          <div class="allTodos">
+            <h1 class="title">All Todos</h1>
+            <div class="line"></div>
+            <p id="allTodosCount"></p>
+          </div>
+          <div class="dueDateTodos">
+            <h1 class="title">Today Todos</h1>
+            <div class="line"></div>
+            <p id="dueDateTodosCount"></p>
+          </div>
+          <div class="pendingTodos">
+            <h1 class="title">Pending Todos</h1>
+            <div class="line"></div>
+            <p id="pendingTodosList"></p>
+          </div>
+          <div class="completedTodos">
+            <h1 class="title">Completed Todos</h1>
+            <div class="line"></div>
+            <p id="completedTodosList"></p>
+          </div>
+          <div class="overDueTodos">
+            <h1 class="title">OverDue Todos</h1>
+            <div class="line"></div>
+            <p id="overDueTodosList"></p>
+          </div>
+          <div class="prioritizedTodos">
+            <h1 class="title">Prioritized Todos</h1>
+            <div class="line"></div>
+            <p id="prioritizedTodosList"></p>
+          </div>
+        </div>
+
+        <!-- Bar Graph Canvas -->
+        <div class="bar-graph" style="margin-top: 20px">
+          <canvas id="todosBarGraph"></canvas>
+        </div>
+      </div>
+
+      <!-- Include Chart.js from CDN -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+      <!-- Add your custom script for dynamic functionality -->
+
+      <div id="todos" class="section">
+        <header>Todos</header>
+        <div class="addTodo">
+          <h1 class="todos-title">Todos</h1>
+          <form action="" id="todo-form">
+            <input type="text" placeholder="Todo Id" id="id" hidden />
+            <input
+              type="text"
+              placeholder="Todo Name"
+              id="name"
+              maxlength="20"
+              autocomplete="off"
+            />
+            <input
+              type="text"
+              placeholder="Todo Description"
+              id="description"
+              maxlength="100"
+              autocomplete="off"
+            />
+            <select name="todo priority" id="todoPriority">
+              <option class="priorityPlaceholder" value="" disabled selected>
+                Todo Priority
+              </option>
+              <option value="high" id="high">High</option>
+              <option value="low" id="low">Low</option>
+              <option value="medium" id="medium">Medium</option>
+              <option value="not prioritized" id="not">not prioritized</option>
+            </select>
+            <input
+              type="date"
+              placeholder="Due Date"
+              id="dueDate"
+              autocomplete="off"
+            />
+            <input type="submit" value="ADD" id="submit-btn" />
+          </form>
+        </div>
+        <!-- Filter Tabs -->
+        <div class="filter-tabs" id="filter-tabs">
+          <button class="all-tab" id="all-tab">
+            <i class="fas fa-list" style="margin-right: 3px"></i> All
+          </button>
+          <button class="dueDate-tab" id="dueDate-tab">
+            <i class="fas fa-clock" style="margin-right: 3px"></i> Today
+          </button>
+          <button class="pending-tab" id="pending-tab">
+            <i class="fas fa-hourglass-half" style="margin-right: 3px"></i>
+            Pending
+          </button>
+          <button class="completed-tab" id="completed-tab">
+            <i class="fas fa-check-square" style="margin-right: 3px"></i>
+            Completed
+          </button>
+          <button class="OverDue-tab" id="overDue-tab">
+            <i class="fas fa-hourglass-half" style="margin-right: 3px"></i>
+            OverDue
+          </button>
+          <button class="prioritized-tab" id="prioritized-tab">
+            <i class="fas fa-bolt" style="margin-right: 3px"></i>
+            prioritized
+          </button>
+        </div>
+        <div class="data-view">
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Due Date</th>
+                <th>Priority</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="todoTableBody">
+              <!-- data will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+        <div id="paginationContainer"></div>
+      </div>
+    </main>
+
+    <script src="../scripts/home.js"></script>
+    <script src="../scripts/colExBtn.js"></script>
+    <script src="../scripts/charts.js"></script>
+    
+  </body>
+</html>

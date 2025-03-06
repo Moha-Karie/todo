@@ -1,0 +1,88 @@
+
+
+.expand-collapse-icon {
+  position: absolute;
+  background-color: white;
+  top: 0px;
+  right: auto;
+  left: auto;
+  
+  padding: 50px 20px;
+  border-radius: 0px 0px 50px 50px;
+  /* border-right: solid 1px black; */
+  /* border-top-right-radius: 10px; */
+  /* border-bottom-right-radius: 10px; */
+
+}
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background: black;
+  color: white;
+  position: fixed;
+  top: 78px;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  /* border-radius: 100px 0px 100px 0px; */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar ul li {
+  cursor: pointer;
+  padding: 15px;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+}
+
+.sidebar ul li:hover {
+  background: #444;
+}
+
+.dashboard-icon,
+.todos-icon {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+/* Sections */
+.section {
+  display: none;
+}
+
+.active {
+  display: block;
+}

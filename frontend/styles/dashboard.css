@@ -1,0 +1,79 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+  
+  @media (min-width: 768px) {
+    .cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cards {
+      grid-template-columns: repeat(3, 1fr); /* For larger screens, use 3 columns */
+    }
+  }
+  
+
+.allTodos,
+.completedTodos,
+.pendingTodos,
+.overDueTodos,
+.dueDateTodos,
+.prioritizedTodos {
+  color: white;
+  width: 300px;
+  padding: 8px 0px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.allTodos {
+  background-color: blue;
+}
+
+.dueDateTodos {
+  background-color: purple;
+}
+.pendingTodos {
+  background-color: orange;
+  /* background-color: rgb(236, 173, 55); */
+}
+
+.completedTodos {
+  background-color: green;
+  /* background-color: rgb(65, 196, 65); */
+}
+.overDueTodos {
+  background-color: red;
+  /* background-color: rgb(235, 73, 73); */
+}
+
+.prioritizedTodos {
+  background-color: teal;
+}
+
+h1 {
+  text-align: center;
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.line {
+  margin-left: 0px;
+  padding-left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+}

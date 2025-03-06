@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <!-- Include Font Awesome CDN for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(221, 249, 229);
+      }
+      .login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        margin-left: 55px;
+      }
+
+      input[type="email"] {
+        border-radius: 100px 0px 0px 100px;
+        border: solid;
+        border-width: 1px;
+        width: 200px;
+        padding: 10px;
+        margin: 0px;
+        outline: none;
+        background-color: white;
+        border-color: white;
+        border-right-color: green;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        text-align: center;
+      }
+
+      input[type="password"] {
+        border-radius: 0px 100px 100px 0px;
+        border: solid;
+        border-width: 1px;
+        width: 200px;
+        padding: 10px;
+        margin-left: -5px;
+        outline: none;
+        background-color: white;
+        border-color: white;
+        font-size: 16px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        text-align: center;
+        border-left-color: green;
+      }
+
+      button {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 7px 10px;
+        border-radius: 25px;
+        cursor: pointer;
+        /* margin-top: 10px; */
+        margin-left: 10px;
+        font-size: 20px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .login {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%; /* Circular shape */
+        display: flex; /* Use flexbox to center content */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 40px;
+      }
+      .signup {
+        margin-top: 40px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+        font-size: 20px;
+        color: green;
+      }
+
+      .signup a{
+        text-decoration: none;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login">Login</div>
+      <form action="" id="loginForm">
+        <input
+          required
+          class="email-entry-box"
+          type="email"
+          name="userEmail"
+          id="userEmail"
+          placeholder="Email"
+          autocomplete="email"
+        />
+        <input
+          required
+          class="password-entry-box"
+          type="password"
+          id="userPassword"
+          placeholder="Password"
+          autocomplete="current-password"
+        />
+        <button type="submit"><i class="fas fa-arrow-right arrow"></i></button>
+      </form>
+      <div class="signup">
+        <a href="register.html"><span class="login-link">SingUp</span></a>
+      </div>
+    </div>
+
+    <script src="../scripts/login.js"></script>
+  </body>
+</html>
