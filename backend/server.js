@@ -52,17 +52,16 @@ app.get("/", servePage("login")); // Default route
 app.get("/login", servePage("login"));
 app.get("/register", servePage("register"));
 app.get("/home", servePage("home"));
-app.get("/karie" ,(req, res)=>{
-res.json("Welcome Karie")
-})
-// API Routes
+app.get("/notFoundPage", servePage("notFoundPage"));
+
 app.use("/api/users", userRoutes);
 app.use("/api/todos", todosRoutes);
 
-// Fallback route for undefined URLs
-app.use((req, res) => {
-  res.status(404).send("Page not found!"); // 404 Error page or redirect to home
-});
+// 404 Route
+app.all("*", (req, res)=>{
+res.sendFile(path.join(__dirname, "..", "frontend", "pages", "notFoundPage.html"));
+})
+
 
 // Error Handling Middleware (should be after all routes)
 app.use(errorHandler);
