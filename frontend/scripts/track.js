@@ -1,4 +1,4 @@
-import { baseUrl } from "./login";
+const baseUrl = "https://todo-app-p99r.onrender.com/api";
 
 document.addEventListener("DOMContentLoaded", () => {
   trackBtnVisibility();

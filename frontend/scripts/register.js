@@ -1,5 +1,4 @@
-import { baseUrl } from "./login";
-
+const baseUrl = "https://todo-app-p99r.onrender.com/api";
 document
   .getElementById("registerForm")
   .addEventListener("submit", async function (event) {

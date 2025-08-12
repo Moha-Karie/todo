@@ -1,4 +1,4 @@
-export const baseUrl = "https://todo-app-p99r.onrender.com/api";
+const baseUrl = "https://todo-app-p99r.onrender.com/api";
 
 document
   .getElementById("loginForm")
@@ -23,7 +23,9 @@ document
         alert(data.message); // Show success message
         // Store the token (Optional: Use localStorage/sessionStorage)
         localStorage.setItem("accessToken", data.accessToken);
-        window.location.href = "home.html";
+        // window.location.href = "./pages/home.html";
+        window.location.href = "pages/home.html";
+
       } else {
         alert(data.error || "Login failed. Please try again."); // Show error message
       }

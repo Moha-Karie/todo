@@ -1,5 +1,4 @@
-import { baseUrl } from "./login";
-
+const baseUrl = "https://todo-app-p99r.onrender.com/api";
 document.addEventListener("DOMContentLoaded", function () {
   getDashboardSummary();
   getTodos("all", 1); // Initially load the first page of all todos
