@@ -28,7 +28,7 @@ async function fetchData() {
     }
 
     const data = await response.json();
-    console.log("API Response:sfsadf", data);
+    console.log("API Response:", data);
 
     // Update text content based on API response, rounded to nearest integer
     document.getElementById("allTodosCount").textContent = Math.round(
