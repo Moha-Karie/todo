@@ -16,6 +16,11 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Allow JSON requests
+
+const allowedOrigins=[
+  ''
+]
+
 app.use(cors()); // Enable Cross-Origin Resource Sharing
 
 // Database Connection
