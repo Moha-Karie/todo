@@ -104,7 +104,7 @@ todoForm.addEventListener("submit", async (e) => {
       );
       // getTodos("completed")
     } else {
-      const response = await fetch(`${baseUrl}/todos/addTodos1`, {
+      const response = await fetch(`${baseUrl}/todos/addTodos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
