@@ -8,7 +8,7 @@ async function fetchData() {
     }
   
     try {
-      const response = await fetch("https://todo-app-spcu.onrender.com/api/users/dashboard", 
+      const response = await fetch("http://localhost:8000/api/users/dashboard", 
         {
         method: "GET",
         headers: {

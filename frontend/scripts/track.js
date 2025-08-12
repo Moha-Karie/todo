@@ -29,7 +29,8 @@ const trackBtnVisibility = async () => {
     return;
   }
 
-  let url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos`;
+  // let url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos`;
+  let url = `http://localhost:8000/api/todos/viewTodos`;
 
   try {
     const response = await fetch(url, {

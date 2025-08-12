@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwtManager from "../../../managers/jwtManager.js";
 
 const login = async (req, res) => {

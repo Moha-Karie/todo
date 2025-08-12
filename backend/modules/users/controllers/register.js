@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import jsonwebtoken from "jsonwebtoken";
-import bcrypt, { hash } from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwtManager from "../../../managers/jwtManager.js";
 const register = async (req, res) => {
   // Importing the model

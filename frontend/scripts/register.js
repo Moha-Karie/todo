@@ -8,8 +8,9 @@ document
     const password = document.getElementById("userPassword").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
 
+    // const
     try {
-      const response = await fetch("https://todo-app-spcu.onrender.com/api/users/register", {
+      const response = await fetch("http://localhost:8000/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +28,7 @@ document
       if (response.ok) {
         alert(data.message); // Show success message
 
-        window.location.href = "/login"; // Redirect to home page
+        window.location.href = "login.html"; // Redirect to home page
       } else {
         alert(data.error || "An error occurred"); // Display only the error message
       }
