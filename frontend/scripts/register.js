@@ -1,3 +1,5 @@
+import { baseUrl } from "./login";
+
 document
   .getElementById("registerForm")
   .addEventListener("submit", async function (event) {
@@ -10,7 +12,7 @@ document
 
     // const
     try {
-      const response = await fetch("http://localhost:8000/api/users/register", {
+      const response = await fetch(`${baseUrl}/users/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -28,7 +30,7 @@ document
       if (response.ok) {
         alert(data.message); // Show success message
 
-        window.location.href = "login.html"; // Redirect to home page
+        window.location.href = "index.html"; // Redirect to home page
       } else {
         alert(data.error || "An error occurred"); // Display only the error message
       }

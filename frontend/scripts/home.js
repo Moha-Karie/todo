@@ -1,3 +1,5 @@
+import { baseUrl } from "./login";
+
 document.addEventListener("DOMContentLoaded", function () {
   getDashboardSummary();
   getTodos("all", 1); // Initially load the first page of all todos
@@ -12,11 +14,11 @@ const getDashboardSummary = async () => {
     const token = localStorage.getItem("accessToken");
 
     if (!token) {
-      window.location.href = "login.html"; // Redirect if no token
+      window.location.href = "index.html"; // Redirect if no token
       return;
     }
 
-    const response = await fetch("http://localhost:8000/api/users/dashboard", {
+    const response = await fetch(`${baseUrl}/users/dashboard`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +81,7 @@ todoForm.addEventListener("submit", async (e) => {
   try {
     if (id) {
       const response = await fetch(
-        `http://localhost:8000/api/todos/editTodo/${id}`,
+        `${baseUrl}/todos/editTodo/${id}`,
         {
           method: "PUT",
           headers: {
@@ -103,7 +105,7 @@ todoForm.addEventListener("submit", async (e) => {
       );
       // getTodos("completed")
     } else {
-      const response = await fetch("http://localhost:8000/api/todos/addTodos", {
+      const response = await fetch(`${baseUrl}/todos/addTodos1`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -158,18 +160,18 @@ const getTodos = async (status, page) => {
       return;
     }
 
-    let url = `http://localhost:8000/api/todos/viewTodos?page=${page}`;
-    // http://localhost:8000/api/todos/viewTodos?page=1
+    let url = `${baseUrl}/todos/viewTodos?page=${page}`;
+    // ${baseUrl}/todos/viewTodos?page=1
     if (status === "completed") {
-      url = `http://localhost:8000/api/todos/viewTodos/completed?page=${page}`;
+      url = `${baseUrl}/todos/viewTodos/completed?page=${page}`;
     } else if (status === "pending") {
-      url = `http://localhost:8000/api/todos/viewTodos/pending?page=${page}`;
+      url = `${baseUrl}/todos/viewTodos/pending?page=${page}`;
     } else if (status === "overDue") {
-      url = `http://localhost:8000/api/todos/viewTodos/overDued?page=${page}`;
+      url = `${baseUrl}/todos/viewTodos/overDued?page=${page}`;
     } else if (status === "dueDate") {
-      url = `http://localhost:8000/api/todos/viewTodos/dueDate?page=${page}`;
+      url = `${baseUrl}/todos/viewTodos/dueDate?page=${page}`;
     } else if (status === "prioritized") {
-      url = `http://localhost:8000/api/todos/viewTodos/prioritized?page=${page}`;
+      url = `${baseUrl}/todos/viewTodos/prioritized?page=${page}`;
     }
 
     const response = await fetch(url, {
@@ -194,8 +196,8 @@ const getTodos = async (status, page) => {
           ? `<i class="fas fa-hourglass-half" style="color: white;"></i>`
           : `<i class="fas fa-check-square" style="color: white;"></i>`;
         const apiUrl = todo.completed
-          ? `http://localhost:8000/api/todos/pendTodo/${todo._id}`
-          : `http://localhost:8000/api/todos/completeTodo/${todo._id}`;
+          ? `${baseUrl}/todos/pendTodo/${todo._id}`
+          : `${baseUrl}/todos/completeTodo/${todo._id}`;
 
         html += `<tr>
           <td style="text-align: left; vertical-align: middle; width: 200px">${
@@ -294,7 +296,7 @@ const deleteTodo = async (id, activeTab) => {
   }
 
   const response = await fetch(
-    `http://localhost:8000/api/todos/deleteTodo/${id}`,
+    `${baseUrl}/todos/deleteTodo/${id}`,
     {
       method: "DELETE",
       headers: {
@@ -449,17 +451,17 @@ const trackTabVisibility = async (status) => {
 
     // Fetch todos data for all statuses
     for (const stat of statuses) {
-      let url = `http://localhost:8000/api/todos/viewTodos`;
+      let url = `${baseUrl}/todos/viewTodos`;
       if (stat === "completed") {
-        url = `http://localhost:8000/api/todos/viewTodos/completed`;
+        url = `${baseUrl}/todos/viewTodos/completed`;
       } else if (stat === "pending") {
-        url = `http://localhost:8000/api/todos/viewTodos/pending`;
+        url = `${baseUrl}/todos/viewTodos/pending`;
       } else if (stat === "overDue") {
-        url = `http://localhost:8000/api/todos/viewTodos/overDued`;
+        url = `${baseUrl}/todos/viewTodos/overDued`;
       } else if (stat === "dueDate") {
-        url = `http://localhost:8000/api/todos/viewTodos/dueDate`;
+        url = `${baseUrl}/todos/viewTodos/dueDate`;
       } else if (stat === "prioritized") {
-        url = `http://localhost:8000/api/todos/viewTodos/prioritized`;
+        url = `${baseUrl}/todos/viewTodos/prioritized`;
       }
       const response = await fetch(url, {
         method: "GET",

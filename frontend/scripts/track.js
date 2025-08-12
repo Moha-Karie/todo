@@ -1,3 +1,5 @@
+import { baseUrl } from "./login";
+
 document.addEventListener("DOMContentLoaded", () => {
   trackBtnVisibility();
   const themeToggle = document.getElementById("themToggle");
@@ -29,8 +31,7 @@ const trackBtnVisibility = async () => {
     return;
   }
 
-  // let url = `https://todo-app-spcu.onrender.com/api/todos/viewTodos`;
-  let url = `http://localhost:8000/api/todos/viewTodos`;
+  let url = `${baseUrl}todos/viewTodos`;
 
   try {
     const response = await fetch(url, {

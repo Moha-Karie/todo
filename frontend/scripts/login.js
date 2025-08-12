@@ -1,3 +1,5 @@
+export const baseUrl = "https://todo-app-p99r.onrender.com/api";
+
 document
   .getElementById("loginForm")
   .addEventListener("submit", async function (event) {
@@ -7,7 +9,7 @@ document
     const password = document.getElementById("userPassword").value;
 
     try {
-      const response = await fetch("http://localhost:8000/api/users/login", {
+      const response = await fetch(`${baseUrl}/users/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
